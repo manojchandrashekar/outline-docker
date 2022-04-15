@@ -59,6 +59,9 @@ services:
       interval: 30s
       timeout: 20s
       retries: 3
+    environment:
+      MINIO_ACCESS_KEY: access
+      MINIO_SECRET_KEY: secret
 
 volumes:
   storage-data:
