@@ -5,7 +5,7 @@ services:
     image: outlinewiki/outline
     env_file: ./docker.env
     ports:
-      - "3000:3000"
+      - "8020:3000"
     depends_on:
       - postgres
       - redis
@@ -37,10 +37,6 @@ services:
       interval: 30s
       timeout: 20s
       retries: 3
-    environment:
-      POSTGRES_USER: user
-      POSTGRES_PASSWORD: pass
-      POSTGRES_DB: outline
 
   storage:
     image: minio/minio
@@ -59,9 +55,6 @@ services:
       interval: 30s
       timeout: 20s
       retries: 3
-    environment:
-      MINIO_ACCESS_KEY: access
-      MINIO_SECRET_KEY: secret
 
 volumes:
   storage-data:
